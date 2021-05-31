@@ -1,0 +1,5 @@
+### GET /search
+GET http://localhost:8000/api/search
+
+### GET /search?dogs+cats
+GET http://localhost:8000/api/search?search_query=dogs+cats

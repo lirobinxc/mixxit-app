@@ -1,25 +1,25 @@
 const express = require('express');
-const { setCors } = require('./middleware/cors');
-const ratingsRouter = require('./routers/ratingsRouter');
-const restaurantsRouter = require('./routers/restaurantsRouter');
-const reviewsRouter = require('./routers/reviewsRouter');
+const cacheControl = require('./middleware/cacheControl');
+const setCors = require('./middleware/cors');
+const requestLogger = require('./middleware/requestLogger');
+const ytSearchRouter = require('./routers/ytSearchRouter');
 
 const app = express();
 
 /* PRE-ROUTES MIDDLEWARE */
 app.use(setCors);
 app.use(express.json());
+app.use(requestLogger);
+app.use('/api/search', cacheControl);
 
-/* ROUTE: API HOMEPAGE */
+/* Route: API root */
 app.get('/api', (req, res) => {
-  res.send('Welcome to the Restaurants API');
+  res.send('Welcome to the Mixxit API');
 });
 
 /* ROUTES */
-app.use('/api/restaurants', restaurantsRouter);
-app.use('/api/reviews', reviewsRouter);
-app.use('/api/ratings', ratingsRouter);
+app.use('/api/search', ytSearchRouter);
 
-/* POST-ROUTES MIDDLEWARE*/
+/* AFTER-ROUTES MIDDLEWARE*/
 
 module.exports = app;

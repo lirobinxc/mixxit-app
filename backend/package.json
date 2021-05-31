@@ -2,15 +2,21 @@
   "name": "mixxit-app-server",
   "version": "1.0.0",
   "description": "mixxit express server",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "NODE_ENV=dev node src/index.js",
+    "test": "jest --verbose --watch",
+    "pregit": "git add .",
+    "git": "git commit -am",
+    "postgit": "git push"
   },
   "author": "lirobinxc <lirobinxc@gmail.com> (https://www.robinli.net/)",
   "license": "MIT",
   "dependencies": {
+    "@googleapis/youtube": "^2.0.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
   }
 }

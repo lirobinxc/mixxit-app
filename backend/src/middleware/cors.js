@@ -5,6 +5,4 @@ const setCors = (req, res, next) => {
   next();
 };
 
-module.exports = {
-  setCors,
-};
+module.exports = setCors;
