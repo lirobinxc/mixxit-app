@@ -33,24 +33,24 @@ CREATE INDEX album_songs_idx_album ON album_songs(album_id);
 CREATE INDEX album_songs_idx_songs ON album_songs(song_id);
 
 CREATE TYPE "genre_name" AS ENUM (
-  'pop',
-  'hip_hop',
-  'rap',
-  'classic_rock',
-  'punk_rock',
-  'electronic',
-  'country',
-  'jazz',
-  'classical',
-  'heavy_metal',
-  'kpop',
-  'jpop',
-  'blues',
-  'dance',
-  'reggae',
-  'gospel',
-  'instrumental',
-  'opera'
+  'Pop',
+  'Hip Hop',
+  'Rap',
+  'Classic Rock',
+  'Punk Rock',
+  'Electronic',
+  'Country',
+  'Jazz',
+  'Classical',
+  'Heavy Metal',
+  'Kpop',
+  'Jpop',
+  'Blues',
+  'Dance',
+  'Reggae',
+  'Gospel',
+  'Instrumental',
+  'Opera'
 );
 
 CREATE TABLE album_genres (

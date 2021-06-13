@@ -2,6 +2,7 @@ const express = require('express');
 const cacheControl = require('./middleware/cacheControl');
 const setCors = require('./middleware/cors');
 const requestLogger = require('./middleware/requestLogger');
+const devRouter = require('./routers/devRouter');
 const ytSearchRouter = require('./routers/ytSearchRouter');
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/api', (req, res) => {
 
 /* ROUTES */
 app.use('/api/search', ytSearchRouter);
+app.use('/dev', devRouter);
 
 /* AFTER-ROUTES MIDDLEWARE*/
 

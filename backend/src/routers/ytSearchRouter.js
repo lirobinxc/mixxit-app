@@ -1,5 +1,5 @@
 const ytSearchRouter = require('express').Router();
-const db = require('../db');
+const pool = require('../db'); 
 
 // CONNECT TO YOUTUBE API
 const { youtube } = require('@googleapis/youtube');
