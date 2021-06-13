@@ -20,7 +20,7 @@ app.get('/api', (req, res) => {
 
 /* ROUTES */
 app.use('/api/search', ytSearchRouter);
-app.use('/dev', devRouter);
+// app.use('/dev', devRouter);
 
 /* AFTER-ROUTES MIDDLEWARE*/
 
