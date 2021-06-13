@@ -1,6 +1,11 @@
 const express = require('express');
 const cacheControl = require('./middleware/cacheControl');
 const setCors = require('./middleware/cors');
+const {
+  errorHandlerFinal,
+  errorHandler,
+  unknownEndpoint,
+} = require('./middleware/errorHandlers');
 const requestLogger = require('./middleware/requestLogger');
 const devRouter = require('./routers/devRouter');
 const ytSearchRouter = require('./routers/ytSearchRouter');
@@ -23,5 +28,8 @@ app.use('/api/search', ytSearchRouter);
 app.use('/dev', devRouter);
 
 /* AFTER-ROUTES MIDDLEWARE*/
+app.use(unknownEndpoint);
+app.use(errorHandler);
+app.use(errorHandlerFinal);
 
 module.exports = app;
